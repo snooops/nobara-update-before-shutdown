@@ -1,0 +1,14 @@
+[Unit]
+Description=Run nobara-sync cli before shutdown
+DefaultDependencies=no
+Before=shutdown.target reboot.target halt.target
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/nobara-automatic-update.sh
+TimeoutStartSec=0
+
+[Install]
+WantedBy=shutdown.target reboot.target halt.target
