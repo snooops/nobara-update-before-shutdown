@@ -6,13 +6,14 @@ Still WIP
 # Installation
 ```bash
 sudo cp src/bin/nobara-automatic-update.sh /usr/local/bin/nobara-automatic-update.sh
+sudo chmod +x /usr/local/bin/nobara-automatic-update.sh
 sudo cp src/systemd/update-before-shutdown.service /etc/systemd/system/
 sudo systemctl daemon-reload
 sudo systemctl enable update-before-shutdown.service
 ```
 
 # Roadmap
-* Does the script needs to be +x?
+* ~~Does the script needs to be +x?~~ Yes.
 * Add manual flatpack update
 * Add a message to the shutdown screen if updates are getting processed
 * Validate if all 3 targets are needed in the systemd file
